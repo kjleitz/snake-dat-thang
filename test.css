@@ -1,55 +1,101 @@
-.container {
+body {
   position: relative;
-  width: 350px;
-  height: 210px;
+}
+
+.container {
+  border: 2px solid green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50%;
 }
 
 .flex {
   display: flex;
-  justify-content: center;
+  border: 1px solid red;
+}
+
+span {
+  position: relative;
+  top: 2em;
+  left: 2em;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
 }
 
 .box {
-  background-color: gray;
-  margin: 10px;
-  height: 50px;
-  width: 50px;
+  border: 1px solid black;
+  color: red;
+  margin: 0.5em;
 }
 
 .top-left-right {
+  height: 33%;
   flex-direction: row;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
 }
 
 .top-right-down {
+  width: 20%;
   flex-direction: column;
+  justify-content: center;
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
 }
 
 .bottom-right-left {
+  height: 33%;
   flex-direction: row-reverse;
+  justify-content: space-between;
   position: absolute;
   bottom: 0;
   right: 0;
+  left: 0;
 }
 
 .bottom-left-up {
+  width: 20%;
   flex-direction: column-reverse;
+  justify-content: center;
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
 }
 
+.top-left-right .box, .bottom-right-left .box {
+  width: 20%;
+}
+
+.top-right-down .box, .bottom-left-up .box {
+  height: 27%;
+}
 
 @media (max-width: 600px) {
 
-  .top-left-right, .top-right-down, .bottom-right-left, .bottom-left-up {
-    flex-direction: column;
+  .container {
     position: static;
+  }
+
+  .container .flex {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .container .flex .box {
+    width: 100%;
   }
 
 }

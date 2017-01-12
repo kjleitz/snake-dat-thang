@@ -89,6 +89,7 @@ img {
 
   .container {
     position: static;
+    background-image: none;
   }
 
   .container .flex {
